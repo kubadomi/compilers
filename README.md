@@ -6,8 +6,7 @@ Obecny stan projektu:
 Identyfikacja znaczników, znaków specjalnych i formatowania
 
 Brak:
-Testy
-Skomplikowane próbne pliki w DokuWiki do testów
+Testy, oraz skomplikowane próbne pliki w DokuWiki do testów
 
 
 Członkowie:
