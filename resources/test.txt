@@ -1,0 +1,61 @@
+Doku*W/i_ki supports **bold**, //italic//, __underlined__ and ''monospaced'' texts. \\
+Of course you can **__//''combine''//__** all these.
+* dkodsa
+You can use <sub>subscript</sub> and <sup>superscript</sup>.
+You can mark something as <del>deleted</del> as well or even combine <sup><del> something </del> </sup>
+
+
+This is some text with some linebreaks\\ Note that the
+two backslashes are only recognized at the end of a line\\
+or followed by\\ a whitespace \\this happens without it.
+
+DokuWiki supports multiple ways of creating links. \\
+External links: [[google.pl|goole]] \\
+Internal links: [[pagename|link text]] \\
+Linking to a specific section:  [[syntax#internal|this Section]]. \\
+Email addresses like this one <konrad@gmail.com> \\
+Links with images: [[google.pl|{{image.jpg}}]] \\
+
+images and media files: {{image.jpg}} \\
+Real size:                        {{wiki:dokuwiki-128.png}} \\
+Resize to given width:            {{wiki:dokuwiki-128.png?50}} \\
+Resize to given width and height: {{wiki:dokuwiki-128.png?200x50}} \\
+
+
+==== Headline Level 3 ==== \\
+=== Headline Level 4 === \\
+== Headline Level 5 == \\
+
+List two types: \\
+  * **__//This is a list //__**
+  * The second item {{wiki:dokuwiki-128.png}}
+    * You may have different levels
+      *  ** [[google.pl|goole]] **
+  * Another item
+\\
+  - The same list but ordered
+  - Another item
+    - dasdsadkosadksao
+    - Just use indention for deeper levels
+      - dksaodsakdosakdsa
+      - ksaodkaodkaspdkaos
+  - That's it
+  
+Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.
+
+Table:
+^**__//header1//__**^header2^header3^
+|**column1**|column2|column3|
+Lorem ipsum
+
+Text Conversions:\\
+emoticons: 8-O  :-? :-D :-O :-X :-| ;-)  :?: :!: LOL --> \\
+Of course, you can combine emoticons with text like this: Hi! :-) How are u today? :-? Me, not bad ;-)  \\
+
+No Formatting: \\
+<nowiki>
+This is some text which contains addresses like this: **formatting**, but nothing is done with it.
+</nowiki>
+
+code blocks: \\
+<code>This is preformatted code all spaces are preserved:  </code> \\
