@@ -141,5 +141,93 @@ public class ParserHandlerImp implements ParserHandler {
         }
     }
 
+    @Override
+    public void imageFind(String imageLink) throws Exception {
+        System.out.print(ANSI_PURPLE + "<img src=\"" + imageLink + "\"/>" + ANSI_PURPLE + "</a>"+ ANSI_RESET);
+        content += "<img src=\"" + imageLink + "\"/>" + "</a>";
+    }
+    @Override
+    public void emailFind(String email) throws Exception {
+        System.out.print(ANSI_BLUE + "<a href=\" mailto:" + email + "\">" + email + "</a>" + ANSI_RESET);
+        content += "<a href=\" mailto:" + email + "\">" + email + "</a>";
+    }
 
+    @Override
+    public void text(String str) throws Exception {
+        checkCloseList();
+        System.out.print(ANSI_CYAN + str + ANSI_RESET);
+        content += str;
+    }
+
+    private void checkCloseList() {
+        if(!Scanner.list){
+            for(int i = listInScope.size() - 1; i >= 0; i--){
+                listInScope.remove(i);
+                System.out.println(ANSI_GREEN + "</ul>" + ANSI_RESET);
+                content += "</ul>\n";
+            }
+
+        }
+    }
+
+    public void tableHeadlineFound(String str) throws Exception {
+
+        int countFalse = 0;
+
+        char[] strArray = str.toCharArray();
+
+        for(int i = 0; i < strArray.length; i++){
+            if(strArray[i] == '^'){
+                countFalse = i+1;
+                break;
+            }
+        }
+
+        ParserHandler handler = new ParserHandlerImp();
+        System.out.print(ANSI_GREEN + "<th>");
+        String finishContent = Scanner.checkTagsIn(str.substring(countFalse), handler);
+        System.out.print(ANSI_GREEN + "</th> \n" + ANSI_RESET);
+        content += "<th>" + finishContent + "</th> \n";
+    }
+
+    public void tableColumnFound(String str) throws Exception {
+
+        int countFalse = 0;
+
+        char[] strArray = str.toCharArray();
+
+        for(int i = 0; i < strArray.length; i++){
+            if(strArray[i] == '^'){
+                countFalse = i+1;
+                break;
+            }
+        }
+
+        ParserHandler handler = new ParserHandlerImp();
+        System.out.print(ANSI_GREEN + "<td>");
+        String finishContent = Scanner.checkTagsIn(str.substring(countFalse), handler);
+        System.out.print(ANSI_GREEN + "</td> \n" + ANSI_RESET);
+        content += "<td>" + finishContent + "</td> \n";
+    }
+
+
+    public void startEndTable(boolean isTable) throws Exception {
+        if(isTable == true){
+            System.out.print(ANSI_GREEN + "</table>" + ANSI_RESET + "\n");
+            content += "</table>\n";
+        }else{
+            System.out.print("\n" + ANSI_GREEN + "<table>" + ANSI_RESET + "\n");
+            content += "\n" + "<table>" + "\n";
+        }
+    }
+
+    public void startEndRow(boolean isTableRow) throws Exception {
+        if(isTableRow == true){
+            System.out.print(ANSI_GREEN + "</tr>" + ANSI_RESET + "\n");
+            content += "</tr>" + "\n";
+        }else{
+            System.out.print(ANSI_GREEN + "<tr>" + ANSI_RESET + "\n");
+            content +="<tr>" + "\n";
+        }
+    }
 }
