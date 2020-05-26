@@ -35,10 +35,10 @@ List two types: \\
 \\
   - The same list but ordered
   - Another item
-    - dasdsadkosadksao
+    - one item
     - Just use indention for deeper levels
-      - dksaodsakdosakdsa
-      - ksaodkaodkaspdkaos
+      - another item
+      - and another
   - That's it
   
 Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.
