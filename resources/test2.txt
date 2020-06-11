@@ -1,0 +1,4 @@
+{{page>[id]&[flags]}}
+{{section>[id]#[section]&[flags]}}
+{{namespace>[namespace]#[section]&[flags]}}
+{{tagtopic>[tag]&[flags]}}
